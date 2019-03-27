@@ -1,0 +1,34 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+" 導入したいプラグインを以下に列挙
+" Plugin '[Github Author]/[Github repo]' の形式で記入
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-endwise'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+
+
+
+
+call vundle#end()
+filetype plugin indent on
+
+"　その他のカスタム設定を以下に書く
+set number
+set smartindent
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set expandtab
+set title
+set shiftwidth=2
+set tabstop=2
+syntax on
+colorscheme desert
+set cursorline
+
