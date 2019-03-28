@@ -2,7 +2,6 @@ class BoardsController < ApplicationController
   def index
   end
 
-  if new
-
+  def new
   end
 end
