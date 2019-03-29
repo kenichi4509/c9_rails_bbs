@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
   def index
-    @boards = Board.all
+    @boards = Board.all.order('created_at desc')
   end
 
   def new
@@ -8,7 +8,8 @@ class BoardsController < ApplicationController
   end
 
   def create
-    Board.create(board_params)
+    board = Board.create(board_params)
+    redirect_to board
   end
 
   def show
@@ -17,6 +18,18 @@ class BoardsController < ApplicationController
 
   def edit
     @board = Board.find(params[:id])
+  end
+
+  def update
+    board = Board.find(params[:id])
+    board.update(board_params)
+    redirect_to board
+  end
+
+  def destroy
+    board = Board.find(params[:id])
+    board.delete
+    redirect_to boards_path
   end
 
   private 
