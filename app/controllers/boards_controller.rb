@@ -1,4 +1,7 @@
 class BoardsController < ApplicationController
+  before_action :target_board, only: %i[show edit update destroy]
+
+
   def index
     @boards = Board.all.order('created_at desc')
   end
@@ -13,22 +16,18 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board = Board.find(params[:id])
   end
 
   def edit
-    @board = Board.find(params[:id])
   end
 
   def update
-    board = Board.find(params[:id])
-    board.update(board_params)
-    redirect_to board
+    @board.update(board_params)
+    redirect_to board_path
   end
 
   def destroy
-    board = Board.find(params[:id])
-    board.delete
+    @board.delete
     redirect_to boards_path
   end
 
@@ -38,6 +37,9 @@ class BoardsController < ApplicationController
     params.require(:board).permit(:name, :title, :body)
   end
 
+  def target_board
+    @board = Board.find(params[:id])
+  end
 
 
 end
