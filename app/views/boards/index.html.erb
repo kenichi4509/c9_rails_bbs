@@ -4,6 +4,7 @@
     <%= link_to '新規作成', new_board_path, class: 'btn btn-outline-dark' %>
   </div>
 </div>
+<%= paginate @boards %>
 <table class="table table-hover boards__table">
   <thead class="thead-dark">
     <tr>
