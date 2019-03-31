@@ -9,21 +9,13 @@ class BoardsController < ApplicationController
     
   end
 
-  # def page
-  #  page = Board.find(params[:id])
-
-   #   index
-
-
- # end
-
-
   def new
     @board = Board.new
   end
 
   def create
     board = Board.create(board_params)
+    flash[:notice] = "「#{board.title}」の掲示板を作成しました"
     redirect_to board
   end
 
