@@ -27,6 +27,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @commet = @board.comments.new
   end
 
   def edit
