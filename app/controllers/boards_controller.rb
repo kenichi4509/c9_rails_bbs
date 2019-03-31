@@ -27,12 +27,12 @@ class BoardsController < ApplicationController
 
   def update
     @board.update(board_params)
-    redirect_to board_path
+    redirect_to board_path, flash: { notice: "編集しました"}
   end
 
   def destroy
     @board.delete
-    redirect_to boards_path
+    redirect_to boards_path, flash: { notice: "「#{@board.title}」の掲示板を削除しました"}
   end
 
   private 
