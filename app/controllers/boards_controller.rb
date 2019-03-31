@@ -5,7 +5,7 @@ class BoardsController < ApplicationController
   def index
    # @boards =  Board.find_by_sql("SELECT * FROM boards LIMIT 20,10")
    # @boards = Board.limit(10).limit(20).order('created_at desc')
-     @boards = Board.page(params[:page])
+    @boards = Board.page(params[:page]).order('created_at desc')
     
   end
 
