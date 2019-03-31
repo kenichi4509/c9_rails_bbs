@@ -11,7 +11,7 @@
 #
 
 class Board < ApplicationRecord
-  has-many :comments
+  has_many :comments
 
   validates :name, presence: true, length: { maximum: 10 }
   validates :title, presence: true, length: { maximum: 30 }
