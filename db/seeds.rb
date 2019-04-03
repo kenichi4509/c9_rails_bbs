@@ -9,4 +9,15 @@
     Board.create([
       { name: "ユーザー名#{num}", title: "タイトル#{num}", body: "本文#{num}" }
     ])
+
+  Tag.create([
+    { name: 'ゲーム'  },
+    { name: 'スマホ'  },
+    { name: 'プログラミング'  },
+    { name: 'パソコン'  },
+    { name: 'ご飯'  },
+    { name: '仕事'  }
+  ])
+
+
   end
