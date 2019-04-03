@@ -24,7 +24,11 @@
     <% @boards.each do |board| %>
     <tr>
       <td><%= board.id %></td>
-      <td><%= board.title %></td>
+      <td><%= board.title %><br>
+        <% board.tags.each do |tag| %>
+          <span class="badge badge-primary"><%= tag.name %></span>
+        <% end %>
+      </td>
       <td><%= board.name %></td>
       <td><%= board.created_at.to_s(:jp_time) %></td>
       <td><%= board.updated_at.to_s(:jp_time) %></td>
