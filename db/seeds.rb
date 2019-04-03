@@ -5,10 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+if Rails.env == 'development'
   50.times do |num|
     Board.create([
       { name: "ユーザー名#{num}", title: "タイトル#{num}", body: "本文#{num}" }
     ])
+  end
 
   Tag.create([
     { name: 'ゲーム'  },
@@ -19,5 +21,4 @@
     { name: '仕事'  }
   ])
 
-
-  end
+end
