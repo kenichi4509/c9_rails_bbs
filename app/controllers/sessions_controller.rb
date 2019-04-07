@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to mypage_path
     else
-      render 'home/index'
+      #render 'home/index'
+      redirect_to users_path, flash: { notice: "ログインに失敗しました"}
     end
   end
 
