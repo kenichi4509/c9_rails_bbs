@@ -1,24 +1,15 @@
-# README
+「アプリケーションの概要」
+- 質問掲示板としてサービスを提供するものとなります。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+「アプリケーションの機能一覧」
+- 質問記事投稿機能
+- 質問記事に返信を付ける機能
+- 認証機能
+- ページネーション機能
+- 質問記事投稿時にタグ付け機能
+- 質問一覧からタグによる絞り込み機能
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+「アプリケーション内で使用している技術一覧」
+- AWS Cloud9にて開発/Herokuによるデプロイ
+- Ruby 2.5.1/Ruby on Rails 5.2系/sqlite3 1.3系
+- Rspec
