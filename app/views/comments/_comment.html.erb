@@ -5,6 +5,7 @@
     <span><%= comment.created_at.to_s(:jp_time) %></span>
     <% if @current_user %>
       <% if @current_user.name == comment.name %>
+        <span><%= link_to '編集', edit_comment_path %></span>
         <span><%= link_to '削除', comment, method: :delete, data: { confirm: '削除してよろしいですか？'} %></span>
       <% end %>
     <% end %>
