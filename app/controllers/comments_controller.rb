@@ -11,9 +11,13 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @comment = Comment.find_by(name: @current_user.name)
   end
 
   def update
+    @comment = Comment.find_by(name: @current_user.name)
+    @comment.update(comment_params)
+    redirect_to("/boards/#{@comment[:board_id]}", flash: { notice: "コメントを編集しました" })
   end
 
   def destroy
