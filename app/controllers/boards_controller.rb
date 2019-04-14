@@ -8,10 +8,16 @@ class BoardsController < ApplicationController
     @boards = params[:tag_id].present? ? Tag.find(params[:tag_id]).boards : Board.all
     @boards = @boards.page(params[:page]).order('created_at desc')
     
+    
   end
 
   def new
-    @board = Board.new(flash[:board])
+    if current_user
+      @board = Board.new(name: current_user.name)
+    else
+      @board = Board.new(flash[:board]) 
+    end
+    
   end
 
   def create
@@ -28,7 +34,11 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new(board_id: @board.id)
+    if current_user
+      @comment = Comment.new(board_id: @board.id, name: current_user.name)
+    else
+      @comment = Comment.new(board_id: @board.id)
+    end
   end
 
   def edit
