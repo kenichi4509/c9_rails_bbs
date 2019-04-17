@@ -13,5 +13,8 @@ RSpec.describe BoardsController, type: :controller do
         expect(response).to render_template :new
       end
 
+      it '新しいboardオブジェクトがビューに渡されること' do
+        expect(assigns(:board)).to be_a_new Board
+      end
   end
 end
